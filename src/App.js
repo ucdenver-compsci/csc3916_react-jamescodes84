@@ -7,7 +7,7 @@ import Authentication from './components/authentication';
 import {HashRouter, Route} from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './stores/store';
-/*test comment */
+var test = 0;
 function App() {
   return (
     <div className="App">
