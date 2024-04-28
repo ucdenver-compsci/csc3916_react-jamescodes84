@@ -36,7 +36,7 @@ class MovieList extends Component {
             }
 
             return (
-                <Carousel onSelect={this.handleSelect}>
+              /*  <Carousel onSelect={this.handleSelect}>
                     {movieList.map((movie) =>
                         <Carousel.Item key={movie._id}>
                             <div>
@@ -51,12 +51,20 @@ class MovieList extends Component {
                         </Carousel.Item>
                     )}
 
-                </Carousel>
+                </Carousel>*/
+                <div>
+                <h1>Debug JSON Data</h1>
+                <pre>{JSON.stringify(movies, null, 2)}</pre>  {/* This will "echo" the JSON data */}
+            </div>
             )
         }
 
         return (
-            <MovieListCarousel movieList={this.props.movies} />
+           /* <MovieListCarousel movieList={this.props.movies} />*/
+           <div>
+           <h1>Debug JSON Data</h1>
+           <pre>{JSON.stringify(movies, null, 2)}</pre>  {/* This will "echo" the JSON data */}
+       </div>
         )
     }
 }
