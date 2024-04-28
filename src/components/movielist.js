@@ -38,20 +38,14 @@ class MovieList extends Component {
             return (
                 <Carousel onSelect={this.handleSelect}>
                     {movieList.map((movie) =>
-                        <Carousel.Item key={movie._id}>
+                        <Carousel.Item key={movie.avgRating}>
                             <div>
                                 <LinkContainer to={'/movie/'+movie._id} onClick={()=>this.handleClick(movie)}>
                                     <Nav.Link><Image className="image" src={movie.imageUrl} thumbnail /></Nav.Link>
                                 </LinkContainer>
                             </div>
-                            <div>
-                                <h1>Debug JSON Data</h1>
-                                <pre>{JSON.stringify(movieList, null, 2)}</pre>  {/* This will "echo" the JSON data */}
-                            </div>
-                            <Carousel.Caption>
-                                <h3>{movie.title}</h3>
-                                <BsStarFill glyph={'star'} /> {movie.avgRating} &nbsp;&nbsp; {movie.releaseDate}
-                            </Carousel.Caption>
+                           
+                            
                         </Carousel.Item>
                     )}
 
