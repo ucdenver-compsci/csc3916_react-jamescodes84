@@ -61,8 +61,8 @@ class MovieList extends Component {
         }
 
         return (
-           /* <MovieListCarousel movieList={this.props.movies} />*/
-           <MovieListCarousel movieList={JSON.stringify(movieList, null, 2)} />
+            <MovieListCarousel movieList={this.props.movies} />
+          
           
         )
     }
