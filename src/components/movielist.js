@@ -54,8 +54,8 @@ class MovieList extends Component {
                 </Carousel>*/
                 <div>
                 <h1>Debug JSON Data</h1>
-                <pre>{JSON.stringify(movies, null, 2)}</pre>  {/* This will "echo" the JSON data */}
-            </div>
+                <pre>{JSON.stringify(movieList, null, 2)}</pre>  {/* This will "echo" the JSON data */}
+                </div>
             )
         }
 
