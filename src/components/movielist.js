@@ -27,7 +27,7 @@ class MovieList extends Component {
         const {dispatch} = this.props;
         dispatch(setMovie(movie));
     }
-
+/*
     render() {
         const MovieListCarousel = ({movieList}) => {
             
@@ -60,7 +60,37 @@ class MovieList extends Component {
           
         )
     }
+}*/
+
+render() {
+    const MovieListCarousel = ({movieList}) => {
+        if (!movieList) {
+            return <div>Loading....</div>
+        }
+
+        // Sort movies by their average rating in descending order
+        const sortedMovies = movieList.sort((a, b) => b.averageRating - a.averageRating);
+
+        return (
+            <Carousel onSelect={this.handleSelect}>
+                {sortedMovies.map((movie) =>
+                    <Carousel.Item key={movie._id}>
+                        <div>
+                            <LinkContainer to={'/movie/'+movie._id} onClick={()=>this.handleClick(movie)}>
+                                <Nav.Link><Image className="image" src={movie.imageUrl} thumbnail /></Nav.Link>
+                            </LinkContainer>
+                        </div>
+                    </Carousel.Item>
+                )}
+            </Carousel>
+        );
+    }
+
+    return (
+        <MovieListCarousel movieList={this.props.movies} />
+    );
 }
+
 
 const mapStateToProps = state => {
     return {
