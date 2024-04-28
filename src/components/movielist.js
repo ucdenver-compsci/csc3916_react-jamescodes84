@@ -27,7 +27,7 @@ class MovieList extends Component {
         const {dispatch} = this.props;
         dispatch(setMovie(movie));
     }
-/*
+
     render() {
         const MovieListCarousel = ({movieList}) => {
             
@@ -60,45 +60,6 @@ class MovieList extends Component {
         )
     }
 }
-*/
-
-render() {
-    const MovieListCarousel = ({movieList}) => {
-        
-        if (!movieList) {
-            return <div>Loading....</div>
-        }
-
-        // Add this to display the JSON content on the screen for testing
-        const jsonDebug = <pre>{JSON.stringify(movieList, null, 2)}</pre>;
-
-        return (
-            <>
-                {jsonDebug} {/* Render the JSON data directly above the carousel for testing */}
-                <Carousel onSelect={this.handleSelect}>
-                    {movieList.map((movie) =>
-                        <Carousel.Item key={movie._id}>
-                            <div>
-                                <LinkContainer to={'/movie/'+movie._id} onClick={()=>this.handleClick(movie)}>
-                                    <Nav.Link><Image className="image" src={movie.imageUrl} thumbnail /></Nav.Link>
-                                </LinkContainer>
-                            </div>
-                            <Carousel.Caption>
-                                <h3>{movie.title}</h3>
-                                <BsStarFill glyph={'star'} /> {movie.averageRating} &nbsp;&nbsp; {new Date(movie.releaseDate).getFullYear()}
-                            </Carousel.Caption>
-                        </Carousel.Item>
-                    )}
-                </Carousel>
-            </>
-        )
-    }
-
-    return (
-        <MovieListCarousel movieList={this.props.movies} />
-    )
-}
-
 
 const mapStateToProps = state => {
     return {
