@@ -43,15 +43,7 @@ class MovieDetail extends Component {
                         <ListGroupItem><h4><BsStarFill/> {this.props.selectedMovie.avgRating}</h4></ListGroupItem>
                     </ListGroup>
 
-                    <Form className='form-horizontal'>
-                        <Form.Group controlId="review">
-                             <Form.Label>Name</Form.Label>
-                              <Form.Control onChange={this.updateDetails} value={this.state.details.name} type="text" placeholder="Review" />
-                        </Form.Group>
-
-                        <Button onClick={this.register}>Create Review</Button>
-
-                        </Form>
+                    
                     <Card.Body>
                         {this.props.selectedMovie.reviews.map((review, i) =>
                             <p key={i}>
