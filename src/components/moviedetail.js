@@ -42,6 +42,23 @@ class MovieDetail extends Component {
                         </ListGroupItem>
                         <ListGroupItem><h4><BsStarFill/> {this.props.selectedMovie.avgRating}</h4></ListGroupItem>
                     </ListGroup>
+                    <Form className='form-horizontal'>
+                        <Form.Group controlId="name">
+                             <Form.Label>Name</Form.Label>
+                              <Form.Control onChange={this.updateDetails} value={this.state.details.name} type="text" placeholder="Name" />
+                        </Form.Group>
+
+                        <Form.Group controlId="username">
+                            <Form.Label>Email</Form.Label>
+                            <Form.Control onChange={this.updateDetails} value={this.state.details.username} type="email" placeholder="Enter email" />
+                        </Form.Group>
+
+                        <Form.Group controlId="password">
+                            <Form.Label>Password</Form.Label>
+                            <Form.Control onChange={this.updateDetails} value={this.state.details.password}  type="password" placeholder="Password" />
+                        </Form.Group>
+                        <Button onClick={this.register}>Register</Button>
+                        </Form>
                     <Card.Body>
                         {this.props.selectedMovie.reviews.map((review, i) =>
                             <p key={i}>
@@ -51,7 +68,11 @@ class MovieDetail extends Component {
                         )}
                     </Card.Body>
                 </Card>
-            )
+            
+        
+            
+        
+        )
         }
 
 
