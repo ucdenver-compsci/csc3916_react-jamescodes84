@@ -50,9 +50,8 @@ class MovieDetail extends Component {
                             </p>
                         )}
                     </Card.Body>
-                    <Form>
-                        
-                    </Form>
+                    
+                  
                 </Card>
             
         
