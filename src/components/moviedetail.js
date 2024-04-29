@@ -57,7 +57,7 @@ class MovieDetail extends Component {
     }*/
 
     render() {
-        return <div>this.props.selectedMovie.movieId</div>;
+        return this.props.selectedMovie.movieId;
         const DetailInfo = () => {
             // First, check if the selected movie data is available
             if (!this.props.selectedMovie) {
