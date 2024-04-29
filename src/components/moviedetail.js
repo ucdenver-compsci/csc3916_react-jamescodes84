@@ -51,17 +51,14 @@ class MovieDetail extends Component {
                         </p>
                     )}
                     <Form onSubmit={this.submitReview}>
-                        <Form.Group>
-                            <Form.Label>Username</Form.Label>
-                            <Form.Control type="text" name="username" value={this.state.username} onChange={this.handleInputChange} required />
-                        </Form.Group>
+                       
                         <Form.Group>
                             <Form.Label>Rating</Form.Label>
-                            <Form.Control type="number" name="rating" value={this.state.rating} onChange={this.handleInputChange} required />
+                            <Form.Control type="number" name="rating" value={this.state.details.rating} onChange={this.updateDetails} required />
                         </Form.Group>
                         <Form.Group>
                             <Form.Label>Review</Form.Label>
-                            <Form.Control as="textarea" name="review" value={this.state.review} onChange={this.handleInputChange} required />
+                            <Form.Control as="textarea" name="review" value={this.state.review} onChange={this.updateDetails} required />
                         </Form.Group>
                         <Button variant="primary" type="submit">Submit Review</Button>
                     </Form>
