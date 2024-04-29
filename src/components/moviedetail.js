@@ -1,21 +1,4 @@
 
-// Assuming we're using Mongoose with a Movie model
-Movie.aggregate([
-  { $match: { _id: movieId } },
-  { $unwind: "$reviews" },
-  { $group: {
-    _id: "$_id",
-    avgRating: { $avg: "$reviews.rating" },
-    reviews: { $push: "$reviews" },
-    actors: { $first: "$actors" },
-    title: { $first: "$title" },
-    imageUrl: { $first: "$imageUrl" }
-  }}
-]).then(movie => {
-    // Dispatch an action with the movie data
-});
-
-
 
 
 
