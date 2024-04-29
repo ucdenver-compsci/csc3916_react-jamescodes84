@@ -1,4 +1,45 @@
 import React, { Component } from 'react';
+import { Nav, Navbar } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap'; // Assuming you're using react-router-bootstrap for the LinkContainer
+
+class YourComponentName extends Component {
+
+    logout() {
+        // Logic to handle logout
+    }
+
+    render() {
+        return (
+            <div>
+                <Navbar expand="lg" bg="dark" variant="dark">
+                    <Navbar.Brand>Movie App</Navbar.Brand>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Collapse id="basic-navbar-nav">
+                        <Nav className="me-auto"> {/* Adjusted className to fit default spacing */}
+                            <LinkContainer to="/movielist">
+                                <Nav.Link disabled={!this.props.loggedIn}>Movie List</Nav.Link>
+                            </LinkContainer>
+                            <LinkContainer to={'/movies/' + (this.props.selectedMovie ? this.props.selectedMovie._id : '')}>
+                                <Nav.Link disabled={!this.props.loggedIn}>Movie Detail</Nav.Link>
+                            </LinkContainer>
+                            <LinkContainer to="/signin">
+                                <Nav.Link>
+                                    {this.props.loggedIn ? 
+                                        <button onClick={this.logout.bind(this)}>Logout</button> : 
+                                        'Login'
+                                    }
+                                </Nav.Link>
+                            </LinkContainer>
+                        </Nav>
+                    </Navbar.Collapse>
+                </Navbar>
+            </div>
+        );
+    }
+}
+
+
+/*import React, { Component } from 'react';
 import {Navbar, Nav} from 'react-bootstrap';
 import {LinkContainer} from 'react-router-bootstrap';
 import {connect} from 'react-redux';
@@ -42,6 +83,6 @@ const mapStateToProps = state => {
         username : state.auth.username,
         selectedMovie: state.movie.selectedMovie
     }
-}
+}*/
 
 export default connect(mapStateToProps)(MovieHeader);
