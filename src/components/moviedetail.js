@@ -55,7 +55,7 @@ class MovieDetail extends Component {
                     
                 </Card.Body>
                 <Card.Body>
-                    <Form onSubmit={this.submitReview}>
+                    <Form >
                        <Form.Group controlId = 'testId'>
                            <Form.Label>Rating</Form.Label>
                            <Form.Control type="number" name="rating" value={this.state.details.rating} onChange={this.updateDetails} />
