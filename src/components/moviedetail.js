@@ -57,14 +57,16 @@ class MovieDetail extends Component {
     }*/
 
     render() {
+        return <div>this.props.selectedMovie.movieId</div>;
         const DetailInfo = () => {
             // First, check if the selected movie data is available
             if (!this.props.selectedMovie) {
                 return <div>Loading...</div>;
             }
-    
+            
             // If selectedMovie is available, render the detailed card
             return (
+                
                 <Card>
                     <Card.Header>Movie Detail</Card.Header>
                     <Card.Body>
