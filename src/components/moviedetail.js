@@ -27,11 +27,12 @@ class MovieDetail extends Component {
             }
 
             return (
-                <Card>
+            <Card>
                 <Card.Header>Movie Detail</Card.Header>
                 <Card.Body>
                     <Image className="image" src={selectedMovie.imageUrl} thumbnail />
                 </Card.Body>
+
                 <ListGroup>
                     <ListGroupItem>{selectedMovie.title}</ListGroupItem>
                     <ListGroupItem>
@@ -43,6 +44,7 @@ class MovieDetail extends Component {
                     </ListGroupItem>
                     <ListGroupItem><h4><BsStarFill/> {selectedMovie.avgRating.toFixed(1)}</h4></ListGroupItem>
                 </ListGroup>
+
                 <Card.Body>
                     {selectedMovie.reviews.map((review, i) =>
                         <p key={i}>
@@ -50,18 +52,20 @@ class MovieDetail extends Component {
                             &nbsp; <BsStarFill /> {review.rating}
                         </p>
                     )}
+                    
+                </Card.Body>
+                <Card.Body>
                     <Form onSubmit={this.submitReview}>
-                       
-                        <Form.Group controlId = 'testId'>
-                            <Form.Label>Rating</Form.Label>
-                            <Form.Control type="number" name="rating" value={this.state.details.rating} onChange={this.updateDetails} />
-                        </Form.Group>
-                        <Form.Group controlId = 'testId2'>
-                            <Form.Label>Review</Form.Label>
-                            <Form.Control as="textarea" name="review" value={this.state.details.review} onChange={this.updateDetails} />
-                        </Form.Group>
-                        <Button onClick={this.submitReview}>Submit Review</Button>
-                    </Form>
+                       <Form.Group controlId = 'testId'>
+                           <Form.Label>Rating</Form.Label>
+                           <Form.Control type="number" name="rating" value={this.state.details.rating} onChange={this.updateDetails} />
+                       </Form.Group>
+                       <Form.Group controlId = 'testId2'>
+                           <Form.Label>Review</Form.Label>
+                           <Form.Control as="textarea" name="review" value={this.state.details.review} onChange={this.updateDetails} />
+                       </Form.Group>
+                       <Button onClick={this.submitReview}>Submit Review</Button>
+                   </Form>
                 </Card.Body>
             </Card>
             
