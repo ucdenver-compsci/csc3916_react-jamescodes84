@@ -60,7 +60,7 @@ class MovieDetail extends Component {
                             <Form.Label>Review</Form.Label>
                             <Form.Control as="textarea" name="review" value={this.state.details.review} onChange={this.updateDetails} />
                         </Form.Group>
-                        <Button onClick={this.updateDetails}>Submit Review</Button>
+                        <Button onClick={this.submitReview}>Submit Review</Button>
                     </Form>
                 </Card.Body>
             </Card>
