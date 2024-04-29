@@ -7,10 +7,6 @@ import { Image } from 'react-bootstrap';
 
 class MovieDetail extends Component {
 
-    constructor(props) {
-        super(props);
-        this.handleSelect = this.handleSelect.bind(this);
-    }
 
     componentDidMount() {
         const {dispatch} = this.props;
