@@ -52,15 +52,15 @@ class MovieDetail extends Component {
                     )}
                     <Form onSubmit={this.submitReview}>
                        
-                        <Form.Group>
+                        <Form.Group controlId = 'testId'>
                             <Form.Label>Rating</Form.Label>
-                            <Form.Control type="number" name="rating" value={this.state.details.rating} onChange={this.updateDetails} required />
+                            <Form.Control type="number" name="rating" value={this.state.details.rating} onChange={this.updateDetails} />
                         </Form.Group>
-                        <Form.Group>
+                        <Form.Group controlId = 'testId2'>
                             <Form.Label>Review</Form.Label>
-                            <Form.Control as="textarea" name="review" value={this.state.review} onChange={this.updateDetails} required />
+                            <Form.Control as="textarea" name="review" value={this.state.details.review} onChange={this.updateDetails} />
                         </Form.Group>
-                        <Button variant="primary" type="submit">Submit Review</Button>
+                        <Button onClick={this.updateDetails}>Submit Review</Button>
                     </Form>
                 </Card.Body>
             </Card>
