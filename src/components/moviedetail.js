@@ -5,7 +5,7 @@
 import React, { Component } from 'react';
 import { fetchMovie } from "../actions/movieActions";
 import {connect} from 'react-redux';
-import {Card, ListGroup, ListGroupItem } from 'react-bootstrap';
+import {Card, FormGroup, ListGroup, ListGroupItem } from 'react-bootstrap';
 import { BsStarFill } from 'react-icons/bs'
 import { Image } from 'react-bootstrap';
 
@@ -50,6 +50,9 @@ class MovieDetail extends Component {
                             </p>
                         )}
                     </Card.Body>
+                    <Form>
+                        
+                    </Form>
                 </Card>
             
         
