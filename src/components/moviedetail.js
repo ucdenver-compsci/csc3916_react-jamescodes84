@@ -14,7 +14,7 @@ class MovieDetail extends Component {
             dispatch(fetchMovie(this.props.movieId));
         }
     }
-/*
+
     render() {
         const DetailInfo = () => {
             return <div>Test</div>
@@ -54,54 +54,8 @@ class MovieDetail extends Component {
         return (
             <DetailInfo />
         )
-    }*/
-
-    render() {
-        return <Card>{this.props.selectedMovie.movieId}</Card> 
-        const DetailInfo = () => {
-            // First, check if the selected movie data is available
-            if (!this.props.selectedMovie) {
-                return <div>Loading...</div>;
-            }
-            
-            // If selectedMovie is available, render the detailed card
-            return (
-                
-                <Card>
-                    <Card.Header>Movie Detail</Card.Header>
-                    <Card.Body>
-                        <Image className="image" src={this.props.selectedMovie.imageUrl} thumbnail />
-                    </Card.Body>
-                    <ListGroup>
-                        <ListGroupItem>{this.props.selectedMovie.title}</ListGroupItem>
-                        <ListGroupItem>
-                            {this.props.selectedMovie.actors.map((actor, i) =>
-                                <p key={i}>
-                                    <b>{actor.actorName}</b> {actor.characterName}
-                                </p>
-                            )}
-                        </ListGroupItem>
-                        <ListGroupItem>
-                            <h4><BsStarFill /> {this.props.selectedMovie.avgRating}</h4>
-                        </ListGroupItem>
-                    </ListGroup>
-                    <Card.Body>
-                        {this.props.selectedMovie.reviews.map((review, i) =>
-                            <p key={i}>
-                                <b>{review.username}</b> {review.review} &nbsp; <BsStarFill /> {review.rating}
-                            </p>
-                        )}
-                    </Card.Body>
-                </Card>
-            );
-        }
-    
-        return (
-            <div>
-                <DetailInfo />
-            </div>
-        );
     }
+
     
 }
 
